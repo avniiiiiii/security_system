@@ -31,10 +31,6 @@ int main()
         {
         case 1:
         {
-            cout << "_______________________________" << endl;
-            cout << "|          Register          |" << endl;
-            cout << "|----------------------------|" << endl;
-            cout << "|____________________________|" << endl;
             cout << " Please enter your username: ";
             cin >> name;
             cout << " Please enter your password: ";
@@ -89,12 +85,38 @@ int main()
                     // we have to check ikf registered username matches with the login username or not //
                     if (user == creds[0] && pass == creds[1]) // zero position pr username hai aur 1 par password//
                     {
-                        cout << "----------login successful-----------"
+                        cout << "------------Login successful-----------";
+                        cout << endl
+                             << endl;
+                        cout << "Details:" << endl;
+                        cout << "Username:" + name << endl;
+                        cout << "Password:" + pass << endl;
+                        cout << "Age:" + age << endl;
+                    }
+                    else
+                    {
+                        cout << endl
+                             << endl;
+                        cout << "Incorrect Credentials" << endl;
+                        cout << "|    1.Press 2 to login  |" << endl;
+                        cout << "|    2.Press 3 to change password  |" << endl;
                     }
                 }
             }
             break;
+        }
+        case 3:
+        {
+            i = 0;
+
+            cout << "_______________________________" << endl;
+            cout << "|        Change Password     |" << endl;
+            cout << "|----------------------------|" << endl;
+            cout << "|____________________________|" << endl;
+            break;
+
         } // Add more cases for other options if needed
         }
-    } while (a != 4); // Exit loop when user chooses option 4
+
+    } while (a != 4); //// Exit loop when user chooses option 4
 }
