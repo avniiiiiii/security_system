@@ -147,17 +147,31 @@ int main()
                                 // Once the new password (password1) is confirmed, it's written directly to the file.
                                 cout << "Password changed successfully" << endl;
                             }
+                            else
+                            {
+                                of1 << cp[0] << '\n';
+                                of1 << old;
+                                cout << "Password do not match";
+                            }
                         }
+                    }
+                    else
+                    {
+                        cout << "Please enter valid password" << endl;
+                        break;
                     }
                 }
             }
+            break;
         }
 
-        break;
+        case 4:
+        {
 
-        } // Add more cases for other options if needed
-    }
-}
-while (a != 4)
-    ; // Exit loop when user chooses option 4
+            cout << "____________Thank you!________________" << endl;
+            break;
+        }
+            // Add more cases for other options if needed
+        }
+    } while (a != 4); // Exit loop when user chooses option 4
 }
