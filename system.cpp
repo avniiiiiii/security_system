@@ -128,13 +128,20 @@ int main()
                         cp[i] = word1;
                         i++;
                     }
+                    if (old == cp[1]) // zero par username hai ,1 par password//we are saying if old password is same as current password that user  has entered then do this
+                    {
+                        of3.close();
+                        ofstream of3; // ofstream bcz we want to write something//
+                    }
                 }
             }
-
-            break;
-
-        } // Add more cases for other options if needed
         }
 
-    } while (a != 4); // Exit loop when user chooses option 4
+        break;
+
+        } // Add more cases for other options if needed
+    }
+}
+while (a != 4)
+    ; // Exit loop when user chooses option 4
 }
