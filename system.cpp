@@ -113,10 +113,28 @@ int main()
             cout << "|        Change Password     |" << endl;
             cout << "|----------------------------|" << endl;
             cout << "|____________________________|" << endl;
+            ifstream of3;
+            of3.open("file.txt");
+            cout << "Enter the old password:" << endl;
+            cin >> old;
+            if (of3.is_open())
+            {
+                while (of3.eof())
+                { // endoffile operation
+                    while (getline(of3, text))
+                    {
+                        istringstream iss(text);
+                        iss >> word1;
+                        cp[i] = word1;
+                        i++;
+                    }
+                }
+            }
+
             break;
 
         } // Add more cases for other options if needed
         }
 
-    } while (a != 4); //// Exit loop when user chooses option 4
+    } while (a != 4); // Exit loop when user chooses option 4
 }
