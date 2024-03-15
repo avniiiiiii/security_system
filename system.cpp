@@ -24,26 +24,77 @@ int main()
     {
         cout << endl
              << endl;
-        cout << "enter your choice :" << endl;
+        cout << "Enter your choice: ";
         cin >> a;
+
         switch (a)
         {
         case 1:
         {
             cout << "_______________________________" << endl;
-            cout << "|        Register            |" << endl;
+            cout << "|          Register          |" << endl;
             cout << "|----------------------------|" << endl;
             cout << "|____________________________|" << endl;
-            cout << " Please enter your username: " << endl;
+            cout << " Please enter your username: ";
             cin >> name;
-            cout << "please enter your password: " << endl;
+            cout << " Please enter your password: ";
             cin >> password0;
-            cout << "please enter your age: " << endl;
+            cout << " Please enter your age: ";
             cin >> age;
+
+            // Open file for writing
+            ofstream of1;         // declares an object named of1 of type ofstream, which stands for output file stream. This object will be used to write data to a file.
+            of1.open("file.txt"); // opens a file named "file.txt" in write mode.
+            // conditional statement checks if the file was successfully opened. The is_open() function returns true if the file is open and false otherwise.
+            if (of1.is_open())
+            {
+                of1 << name << "\n";
+                of1 << password0 << "\n";
+
+                of1.close(); // Close the file after writing
+                cout << "Registration successful" << endl;
+            }
+            else
+            {
+                cout << "Error: Unable to open file for writing" << endl;
+            }
             break;
-            // we can store these creadentials in file , so we will use file handling//
         }
+
+        case 2:
+        {
+            i = 0;
+            cout << "_______________________________" << endl;
+            cout << "|          login             |" << endl;
+            cout << "|----------------------------|" << endl;
+            cout << "|____________________________|" << endl;
+            ifstream of2; // Objects of type ifstream are used to open, read from, and close files.
+            of2.open("file.txt");
+            cout << "please enter your username:" << endl;
+            cin >> user;
+            cout << "please enter your username:" << endl;
+            cin >> pass;
+            if (of2.is_open())
+            {
+                while (!of2.eof())
+                {
+                    while (getline(of2, text)) // get line() reads line by line. a loop is used to read lines from the file using getline(). Each line is stored in the variable text.
+                    {
+                        istringstream iss(text); // An istringstream object iss is created using the line read from the file. This object can be used to parse the contents of the line further if needed.
+                                                 // The >> operator is the extraction operator, and it reads data from the stream (iss in this case) into the variable word.
+                        iss >> word;             // this  line extracts the first word from the string text and stores it in the variable word.//  // The >> operator is the extraction operator, and it reads data from the stream (iss in this case) into the variable word.
+                        creds[i] = word;         // After extracting the word from the string, it is stored in the creds array at index i. The creds array is likely intended to store the credentials (e.g., username, password) read from the file.
+                        i++;                     // increments the value of i to move to the next index in the creds array.first username will be stored then password i.e why we used increament operator
+                    }
+                    // we have to check ikf registered username matches with the login username or not //
+                    if (user == creds[0] && pass == creds[1]) // zero position pr username hai aur 1 par password//
+                    {
+                        cout << "----------login successful-----------"
+                    }
+                }
+            }
+            break;
+        } // Add more cases for other options if needed
         }
-    }
-}
+    } while (a != 4); // Exit loop when user chooses option 4
 }
