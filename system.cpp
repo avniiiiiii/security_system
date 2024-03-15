@@ -134,10 +134,19 @@ int main()
                         ofstream of1; // ofstream bcz we want to write something//
                         if (of1.is_open())
                         {
-                            cout << "Enter your new password:" << endl;
+                            cout << "Enter your new password:";
                             cin >> password1;
-                            cout << "Enter your password again:" << endl;
-                            cin >> password1;
+                            cout << "Enter your password again:";
+                            cin >> password2;
+                            // if pass1 matches pass2 we will overwrite our cp[1] i.e our current password//
+                            if (password1 == password2)
+                            {
+                                of1 << cp[0] << '\n'; // This line writes the current username (stored in cp[0]) to the file.
+                                of1 << password1;     // line writes the new password (password1) to the file.
+                                // code does not explicitly write password2 to the file because password2 is only used for confirmation purposes.
+                                // Once the new password (password1) is confirmed, it's written directly to the file.
+                                cout << "Password changed successfully" << endl;
+                            }
                         }
                     }
                 }
