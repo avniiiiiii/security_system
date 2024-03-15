@@ -26,5 +26,24 @@ int main()
              << endl;
         cout << "enter your choice :" << endl;
         cin >> a;
+        switch (a)
+        {
+        case 1:
+        {
+            cout << "_______________________________" << endl;
+            cout << "|        Register            |" << endl;
+            cout << "|----------------------------|" << endl;
+            cout << "|____________________________|" << endl;
+            cout << " Please enter your username: " << endl;
+            cin >> name;
+            cout << "please enter your password: " << endl;
+            cin >> password0;
+            cout << "please enter your age: " << endl;
+            cin >> age;
+            break;
+            // we can store these creadentials in file , so we will use file handling//
+        }
+        }
     }
+}
 }
