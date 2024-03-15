@@ -131,7 +131,14 @@ int main()
                     if (old == cp[1]) // zero par username hai ,1 par password//we are saying if old password is same as current password that user  has entered then do this
                     {
                         of3.close();
-                        ofstream of3; // ofstream bcz we want to write something//
+                        ofstream of1; // ofstream bcz we want to write something//
+                        if (of1.is_open())
+                        {
+                            cout << "Enter your new password:" << endl;
+                            cin >> password1;
+                            cout << "Enter your password again:" << endl;
+                            cin >> password1;
+                        }
                     }
                 }
             }
