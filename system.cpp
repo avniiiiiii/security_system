@@ -4,8 +4,9 @@
 #include <string>
 using namespace std;
 int main()
-{
-    int a, i = 0; // two integer variables a and i, where a is uninitialized and i is initialized to 0.
+{          // two integer variables a and i, where a is uninitialized and i is initialized to 0.
+    int a; // a is the choice input
+    int i = 0;
 
     string text, old, password1, password2, pass, name, password0, user, age, word, word1; // we'll use these variables later on
     string creds[2], cp[2];
@@ -18,4 +19,12 @@ int main()
     cout << "║ 3. Change Password                ║" << endl;
     cout << "║ 4. End Program                    ║" << endl;
     cout << "╚══════════════════════════════════╝" << endl;
+    // now the user has to enter any one option as an input so we will use a do while loop//
+    do
+    {
+        cout << endl
+             << endl;
+        cout << "enter your choice :" << endl;
+        cin >> a;
+    }
 }
