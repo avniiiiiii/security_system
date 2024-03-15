@@ -171,7 +171,10 @@ int main()
             cout << "____________Thank you!________________" << endl;
             break;
         }
-            // Add more cases for other options if needed
+        default:
+
+            cout << "Enter a valid choice:";
         }
     } while (a != 4); // Exit loop when user chooses option 4
+    return 0;
 }
